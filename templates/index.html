@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Processing</title>
+</head>
+<body>
+    <h1>Image Processing</h1>
+
+    <form action="/" method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {{ form.file.label }} {{ form.file }}
+        {{ form.recaptcha }}
+
+        <input type="submit" value="Upload">
+    </form>
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+
+    {% if image_path %}
+        <h2>Original Image</h2>
+        <img src="{{ image_path }}" alt="Original Image">
+
+        <h2>Color Distribution</h2>
+        <img src="{{ original_plot_path }}" alt="Original Image Color Distribution">
+    {% endif %}
+
+    {% if top_left_path %}
+        <h2>New Images</h2>
+        <img src="{{ top_left_path }}" alt="Top Left">
+        <img src="{{ top_right_path }}" alt="Top Right">
+        <img src="{{ bottom_left_path }}" alt="Bottom Left">
+        <img src="{{ bottom_right_path }}" alt="Bottom Right">
+
+        <h2>Color Distribution for New Images</h2>
+        <img src="{{ top_left_plot_path }}" alt="Top Left Color Distribution">
+        <img src="{{ top_right_plot_path }}" alt="Top Right Color Distribution">
+        <img src="{{ bottom_left_plot_path }}" alt="Bottom Left Color Distribution">
+        <img src="{{ bottom_right_plot_path }}" alt="Bottom Right Color Distribution">
+    {% endif %}
+</body>
+</html>
