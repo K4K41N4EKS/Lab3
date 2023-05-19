@@ -24,6 +24,34 @@
 
         <h2>Color Distribution</h2>
         <img src="{{ original_plot_path }}" alt="Original Image Color Distribution">
+
+        <h2>Size Table</h2>
+        <table>
+            <tr>
+                <th>Image</th>
+                <th>Size</th>
+            </tr>
+            <tr>
+                <td>Original</td>
+                <td>{{ original_size }}</td>
+            </tr>
+            <tr>
+                <td>Top Left</td>
+                <td>{{ top_left_size }}</td>
+            </tr>
+            <tr>
+                <td>Top Right</td>
+                <td>{{ top_right_size }}</td>
+            </tr>
+            <tr>
+                <td>Bottom Left</td>
+                <td>{{ bottom_left_size }}</td>
+            </tr>
+            <tr>
+                <td>Bottom Right</td>
+                <td>{{ bottom_right_size }}</td>
+            </tr>
+        </table>
     {% endif %}
 
     {% if top_left_path %}
